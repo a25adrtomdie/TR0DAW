@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joc de preguntes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container my-4" style="max-width: 800px;">
+        <div class="card shadow-sm border-0 p-4">
+            
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                <div id="usuari">
+                    <div class="input-group">
+                        <input type="text" id="nom" class="form-control" placeholder="Escriu el teu nom">
+                        <button id="guardarNom" class="btn btn-primary">Guardar nom</button>
+                    </div>
+                </div>
+                <a href="crud.html" class="btn btn-outline-secondary btn-sm">Gestionar preguntes</a>
+            </div>
+
+            <div class="sticky-top bg-white py-3 mb-4 border-bottom shadow-sm rounded px-3" style="top: 10px; z-index: 1020;">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <div id="tiempo" class="h4 text-danger m-0 fw-bold"></div>
+                    </div>
+                    <div class="col-6 text-end">
+                        <div id="marcador"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="partida" class="mb-4">
+                aqui posarem les preguntes
+            </div>
+
+            <button id="enviarResultados" class="btn btn-success btn-lg w-100 d-none">
+                Enviar Resultats
+            </button>
+        </div>
+    </div>
+
+    <script src="funcions.js"></script>
+</body>
+
+</html>

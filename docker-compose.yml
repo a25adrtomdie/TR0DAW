@@ -1,0 +1,52 @@
+services:
+
+  node:
+
+    image: node:20
+
+    volumes:
+      - ./back:/home/node/app
+      - ./public:/home/node/public
+
+    working_dir: /home/node/app
+
+    ports:
+      - 20333:20333
+
+    command: bash -c "npm install && npm start"
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+
+  db:
+
+    image: mysql:8.2.0
+
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: juego_banderas
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+    ports:
+      - 3306:3306
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/script.sql:/docker-entrypoint-initdb.d/script.sql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uuser", "-puser"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+
+volumes:
+  mysql_data:

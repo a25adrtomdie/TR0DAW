@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Preguntes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lumen/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h1 class="mb-4 text-primary fw-bold">Gestionar preguntes</h1>
+
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title m-0 fw-bold">Afegir / Editar pregunta</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="pregunta" class="form-label font-weight-bold">Pregunta</label>
+                            <input type="text" class="form-control" id="pregunta" placeholder="Pregunta">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="respuesta1" class="form-label small">Resposta 1</label>
+                            <input type="text" class="form-control" id="respuesta1" placeholder="https://flagsapi.com/...">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="respuesta2" class="form-label small">Resposta 2</label>
+                            <input type="text" class="form-control" id="respuesta2" placeholder="https://flagsapi.com/...">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="respuesta3" class="form-label small">Resposta 3</label>
+                            <input type="text" class="form-control" id="respuesta3" placeholder="https://flagsapi.com/...">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="respuesta4" class="form-label small">Resposta 4</label>
+                            <input type="text" class="form-control" id="respuesta4" placeholder="https://flagsapi.com/...">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="respuesta_correcta" class="form-label fw-bold">Resposta correcta:</label>
+                            <select id="respuesta_correcta" class="form-select">
+                                <option value="1">Resposta 1</option>
+                                <option value="2">Resposta 2</option>
+                                <option value="3">Resposta 3</option>
+                                <option value="4">Resposta 4</option>
+                            </select>
+                        </div>
+
+                        <button id="crearPregunta" class="btn btn-success w-100 fw-bold">Crear pregunta</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-secondary text-white">
+                        <h4 class="card-title m-0 fw-bold">Llista de preguntes</h4>
+                    </div>
+                    <div class="card-body p-3" id="preguntes">
+                        Aquí apareceran les preguntes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="crud.js"></script>
+</body>
+
+</html>
